@@ -1,31 +1,31 @@
-# Pokemaos Battle Predictor
+# Classificador de Crânios Egípcios
 
-**Pokemaos Battle Predictor** é um projeto inspirado no universo de Pokémon, mas com uma reviravolta divertida: em vez de batalhas tradicionais, os monstros de "Pokemaos" se enfrentam jogando pedra, papel ou tesoura! Este repositório contém um modelo de rede neural treinado para prever o vencedor dessas batalhas com base nos atributos dos Pokemaos.
+O **Classificador de Crânios Egípcios** é um projeto de aprendizado de máquina focado na classificação de crânios de diferentes períodos históricos do Egito Antigo. Utilizando redes neurais e técnicas de aumento de dados, o modelo é capaz de prever a qual era histórica um crânio pertence com base em suas medidas antropométricas.
 
 ## Sobre o Projeto
 
-Neste projeto, utilizamos um MLPClassifier da biblioteca `scikit-learn` para treinar um modelo capaz de prever qual Pokemao ganhará em uma batalha de pedra, papel ou tesoura. Os dados foram processados e aumentados para melhorar a diversidade do conjunto de treinamento, e o modelo foi avaliado para garantir sua precisão.
+Neste projeto, aplicamos uma **rede neural multicamada** (MLP) para classificar crânios de cinco períodos distintos da história egípcia. O conjunto de dados contém medidas antropométricas de crânios de diferentes eras, e o modelo foi desenvolvido para identificar o período correto a partir dessas informações.
 
 ### Funcionalidades
 
-- **Previsão de Vencedor:** O modelo é capaz de prever o vencedor entre dois Pokemaos usando seus atributos como entrada.
-- **Data Augmentation:** O conjunto de dados é aumentado através da adição de ruído para melhorar a robustez do modelo.
-- **Criação de Pares de Batalha:** Gera pares de Pokemaos e define o vencedor com base nas regras do jogo.
-- **Salvamento e Carregamento do Modelo:** O modelo treinado e o scaler são salvos para uso futuro em previsões.
-- **Simulação de Batalhas Aleatórias:** Permite simular batalhas aleatórias usando Pokemaos do conjunto de teste.
+- **Classificação de Crânios:** O modelo classifica crânios em cinco períodos históricos: Pré-dinástico Primitivo, Pré-dinástico Antigo, 12ª e 13ª Dinastias, Período Ptolemaico e Período Romano.
+- **Data Augmentation:** O conjunto de dados é ampliado através da adição de ruído aos dados de treinamento para aumentar a robustez do modelo e melhorar a generalização.
+- **Treinamento e Avaliação:** O modelo é treinado em um conjunto de dados pré-processado e validado com técnicas como Early Stopping e Redução de Taxa de Aprendizado para evitar overfitting.
+- **Salvamento e Carregamento do Modelo:** O modelo treinado pode ser salvo e carregado para uso em previsões futuras.
 
 ### Tecnologias Utilizadas
 
 - Python
-- Pandas e NumPy para manipulação de dados
-- Scikit-learn para o modelo de rede neural e pré-processamento
-- Joblib para salvar e carregar o modelo treinado
+- Pandas e NumPy para manipulação e processamento de dados
+- TensorFlow e Keras para a construção e treinamento da rede neural
+- Scikit-learn para pré-processamento dos dados
+- Matplotlib e Seaborn para visualização de métricas de desempenho
 
 ## Como Usar
 
 1. **Clone o Repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/pokemaos-battle-predictor.git
+   git clone https://github.com/carlosjefte/Trabalho-3-Introducao-a-Ciencia-de-Dados.git
    ```
    
 2. **Instale as Dependências:**
@@ -34,15 +34,13 @@ Neste projeto, utilizamos um MLPClassifier da biblioteca `scikit-learn` para tre
    ```
 
 3. **Treine o Modelo:**
-   Use o script principal para treinar o modelo com o conjunto de dados de Pokemaos.
+   Utilize o script principal para treinar o modelo com o conjunto de dados de crânios:
+   ```bash
+   python MLP_Classifier.py
+   ```
 
-4. **Simule Batalhas:**
-   Utilize as funções disponíveis para prever o vencedor entre dois Pokemaos ou para simular batalhas aleatórias.
-
-## Contribuições
-
-Contribuições são bem-vindas! Se você tem ideias para melhorar o modelo ou adicionar novas funcionalidades, sinta-se à vontade para abrir uma issue ou enviar um pull request.
-
----
-
-Essa descrição fornece uma visão geral do projeto, explica como ele funciona e orienta os usuários sobre como começar a usar o repositório. Ela também abre espaço para contribuições, o que é sempre um bom incentivo para projetos de código aberto no GitHub!
+4. **Previsão de Novos Dados:**
+   O modelo treinado pode ser testado para classificar novos crânios:
+   ```bash
+   python Clasifier_Inference.py
+   ```
